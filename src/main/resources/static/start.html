@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Password Encoding and Decoding</title>
+</head>
+<body>
+	<h1>Welcome to password Encryption and Decryption!</h1>
+	<br />
+	<p th:text="${addPassword}" />
+	<form action="#" th:href="@{/encode}" th:object="${addPassword}">
+		Password to Encrypt: <input type="text" name="pass" th:field="*{pass}" />
+		Key: <input type="text" name="key" th:field="*{key}" /><br />
+		<br />
+		<button name="submit" type="submit" value="0">Encode</button>
+		Value: <label name="encode" th:field="*{res}" /><br />
+		<br /> <br />
+		<br />
+		<br />
+	</form>
+
+	<form action="#" th:action="@{/decode}" th:object="${addPassword}">
+		Password to Decrypt: <input type="text" name="pass" th:field="*{pass}" />
+		Key: <input type="text" name="key" th:field="*{key}" /><br />
+		<br />
+		<button name="submit" type="submit" value="0">Decode</button>
+		Value: <label name="decode" th:field="*{res}" /><br />
+		<br />
+</body>
+</html>
